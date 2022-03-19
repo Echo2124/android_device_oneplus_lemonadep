@@ -1,10 +1,18 @@
-#
-# Copyright (C) 2021-2022 The LineageOS Project
-#
+# Copyright (C) 2021 The LineageOS Project
+# Copyright (C) 2021-2022 The Evolution X Project
 # SPDX-License-Identifier: Apache-2.0
-#
-
 # AAPT
+# This file sets variables that control the way modules are built
+# thorughout the system. It should not be used to conditionally
+# disable makefiles (the proper mechanism to control what gets
+# included in a build is to use PRODUCT_PACKAGES in a product
+# definition file).
+
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-evolution
+
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
 
@@ -15,7 +23,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_lahaina/sound_trigger_mixer_paths.xml \
     $(LOCAL_PATH)/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_lahaina/sound_trigger_platform_info.xml
 
-# Boot animation
 TARGET_SCREEN_HEIGHT := 3168
 TARGET_SCREEN_WIDTH := 1440
 

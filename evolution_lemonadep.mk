@@ -14,6 +14,10 @@ $(call inherit-product, device/oneplus/lemonadep/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/evolution/config/common_full_phone.mk)
 
+TARGET_GAPPS_ARCH := arm64
+WITH_GAPPS := true
+WITH_GMS := true
+
 EVO_BUILD_TYPE := UNOFFICIAL
 EXTRA_UDFPS_ANIMATIONS := true
 TARGET_BOOT_ANIMATION_RES := 1440

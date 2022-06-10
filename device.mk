@@ -23,6 +23,10 @@ TARGET_SCREEN_WIDTH := 1440
 PRODUCT_PACKAGES += \
     init.recovery.target.rc
 
+
+DEVICE_PACKAGE_OVERLAYS += \
+	$(LOCAL_PATH)/overlay \
+	$(LOCAL_PATH)/overlay-evolution
 # Overlays
 PRODUCT_PACKAGES += \
     OPlusFrameworksResTarget \
